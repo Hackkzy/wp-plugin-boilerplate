@@ -23,7 +23,7 @@ if ( ! defined( 'PLUGIN_PREFIX_VERSION' ) ) {
 	/**
 	 * The version of the plugin.
 	 */
-	define( 'PLUGIN_PREFIX_VERSION', '1.1.0' );
+	define( 'PLUGIN_PREFIX_VERSION', 'PLUGIN_VERSION' );
 }
 
 if ( ! defined( 'PLUGIN_PREFIX_PATH' ) ) {
