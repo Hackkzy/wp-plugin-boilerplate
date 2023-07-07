@@ -4,7 +4,7 @@
  * Plugin URI:        PLUGIN_URI
  * Description:       PLUGIN_DESCRIPTION
  * Version:           PLUGIN_VERSION
- * Author:            PLUGIN_AUTHOR
+ * Author:            PLUGIN_AUTHOR_NAME
  * Author URI:        PLUGIN_AUTHOR_URI
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -73,7 +73,7 @@ function plugin_prefix_setting_page_link( $links ) {
 
 	$settings_link = sprintf(
 		'<a href="%1$s">%2$s</a>',
-		esc_url( admin_url( 'admin.php?page=settings-page-slug' ) ),
+		esc_url( admin_url( 'admin.php?page=settings-page-slug' ) ), // Change settings page slug.
 		esc_html__( 'Settings', 'blp-persona-verification' )
 	);
 
