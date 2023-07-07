@@ -50,13 +50,24 @@ module.exports = function (grunt) {
 		},
 
 		cssmin: {
-			target: {
+			dev_public: {
 				files: [
 					{
 						expand: true,
-						cwd: "assets/css",
+						cwd: "app/public/assets/css",
 						src: ["*.css", "!*.min.css"],
-						dest: "assets/css",
+						dest: "app/public/assets/css",
+						ext: ".min.css",
+					},
+				],
+			},
+			dev_admin: {
+				files: [
+					{
+						expand: true,
+						cwd: "app/admin/assets/css",
+						src: ["*.css", "!*.min.css"],
+						dest: "app/admin/assets/css",
 						ext: ".min.css",
 					},
 				],
@@ -64,12 +75,32 @@ module.exports = function (grunt) {
 		},
 
 		uglify: {
-			dev: {
+			dev_public: {
 				files: [
 					{
 						expand: true,
-						src: ["assets/js/*.js", "!assets/js/*.min.js"],
-						dest: "assets/js",
+						src: [
+							"app/public/assets/js/*.js",
+							"!app/public/assets/js/*.min.js",
+						],
+						dest: "app/public/assets/js",
+						cwd: ".",
+						rename: function (dst, src) {
+							return src.replace(".js", ".min.js");
+						},
+					},
+				],
+			},
+
+			dev_admin: {
+				files: [
+					{
+						expand: true,
+						src: [
+							"app/admin/assets/js/*.js",
+							"!app/admin/assets/js/*.min.js",
+						],
+						dest: "app/admin/assets/js",
 						cwd: ".",
 						rename: function (dst, src) {
 							return src.replace(".js", ".min.js");
