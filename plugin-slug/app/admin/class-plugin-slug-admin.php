@@ -32,19 +32,17 @@ if ( ! class_exists( 'Plugin_Slug_Admin' ) ) {
 		 * Enqueue custom admin scripts.
 		 */
 		public function plugin_slug_enqueue_scripts() {
-			$plugin_slug_js  = 'plugin-slug-admin.min.js';
-			$plugin_slug_css = 'plugin-slug-admin.min.css';
+			$plugin_asset  = 'plugin-slug-admin';
 
-			if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-				// If Script Debug enabled then include non minified files.
-				$plugin_slug_js = 'plugin-slug-admin.js';
-				$plugin_slug_js = 'plugin-slug-admin.css';
+			if ( ! defined( 'SCRIPT_DEBUG' ) || ! SCRIPT_DEBUG ) {
+				// If Script debug disabled then include minified files.
+				$plugin_asset .= '.min';
 			}
 
 			// Plugin Related Style and Scripts.
 			wp_enqueue_script(
 				'plugin-slug-admin',
-				trailingslashit( PLUGIN_PREFIX_URL ) . 'app/admin/assets/js/' . $plugin_slug_js,
+				trailingslashit( PLUGIN_PREFIX_URL ) . 'app/admin/assets/js/' . $plugin_asset . '.js',
 				array( 'jquery' ),
 				PLUGIN_PREFIX_VERSION,
 				true
@@ -52,7 +50,7 @@ if ( ! class_exists( 'Plugin_Slug_Admin' ) ) {
 
 			wp_enqueue_style(
 				'plugin-slug-admin',
-				trailingslashit( PLUGIN_PREFIX_URL ) . 'app/admin/assets/css/' . $plugin_slug_css,
+				trailingslashit( PLUGIN_PREFIX_URL ) . 'app/admin/assets/css/' . $plugin_asset . '.css',
 				array(),
 				PLUGIN_PREFIX_VERSION
 			);
