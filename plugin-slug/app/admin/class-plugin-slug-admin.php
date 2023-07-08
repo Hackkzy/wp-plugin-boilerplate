@@ -25,13 +25,13 @@ if ( ! class_exists( 'Plugin_Slug_Admin' ) ) {
 		 */
 		public function __construct() {
 			// Enque custom scripts.
-			add_action( 'admin_enqueue_scripts', array( $this, 'plugin_slug_enqueue_scripts' ) );
+			add_action( 'admin_enqueue_scripts', array( $this, 'plugin_prefix_enqueue_scripts' ) );
 		}
 
 		/**
 		 * Enqueue custom admin scripts.
 		 */
-		public function plugin_slug_enqueue_scripts() {
+		public function plugin_prefix_enqueue_scripts() {
 			$plugin_asset  = 'plugin-slug-admin';
 
 			if ( ! defined( 'SCRIPT_DEBUG' ) || ! SCRIPT_DEBUG ) {
