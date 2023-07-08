@@ -74,7 +74,7 @@ function plugin_prefix_setting_page_link( $links ) {
 	$settings_link = sprintf(
 		'<a href="%1$s">%2$s</a>',
 		esc_url( admin_url( 'admin.php?page=settings-page-slug' ) ), // Change settings page slug.
-		esc_html__( 'Settings', 'blp-persona-verification' )
+		esc_html__( 'Settings', 'TEXT_DOMAIN' )
 	);
 
 	array_unshift( $links, $settings_link );
