@@ -32,7 +32,7 @@ if ( ! class_exists( 'Plugin_Slug_Admin' ) ) {
 		 * Enqueue custom admin scripts.
 		 */
 		public function plugin_prefix_enqueue_scripts() {
-			$plugin_asset  = 'plugin-slug-admin';
+			$plugin_asset = 'plugin-slug-admin';
 
 			if ( ! defined( 'SCRIPT_DEBUG' ) || ! SCRIPT_DEBUG ) {
 				// If Script debug disabled then include minified files.
