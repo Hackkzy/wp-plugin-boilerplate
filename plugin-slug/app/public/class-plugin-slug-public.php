@@ -32,7 +32,7 @@ if ( ! class_exists( 'Plugin_Slug_Public' ) ) {
 		 * Enqueue custom frontend scripts.
 		 */
 		public function plugin_prefix_enqueue_scripts() {
-			$plugin_asset  = 'plugin-slug-public';
+			$plugin_asset = 'plugin-slug-public';
 
 			if ( ! defined( 'SCRIPT_DEBUG' ) || ! SCRIPT_DEBUG ) {
 				// If Script debug disabled then include minified files.
