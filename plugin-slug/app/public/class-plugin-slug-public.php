@@ -42,7 +42,7 @@ if ( ! class_exists( 'Plugin_Slug_Public' ) ) {
 			// Plugin Related Style and Scripts.
 			wp_enqueue_script(
 				'plugin-slug-public',
-				trailingslashit( PLUGIN_PREFIX_URL ) . 'app/admin/assets/js/' . $plugin_asset . '.js',
+				trailingslashit( PLUGIN_PREFIX_URL ) . 'app/public/assets/js/' . $plugin_asset . '.js',
 				array( 'jquery' ),
 				PLUGIN_PREFIX_VERSION,
 				true
@@ -50,7 +50,7 @@ if ( ! class_exists( 'Plugin_Slug_Public' ) ) {
 
 			wp_enqueue_style(
 				'plugin-slug-public',
-				trailingslashit( PLUGIN_PREFIX_URL ) . 'app/admin/assets/css/' . $plugin_asset . '.css',
+				trailingslashit( PLUGIN_PREFIX_URL ) . 'app/public/assets/css/' . $plugin_asset . '.css',
 				array(),
 				PLUGIN_PREFIX_VERSION
 			);
